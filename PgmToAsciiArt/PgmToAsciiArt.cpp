@@ -16,9 +16,7 @@ donneesEtInfos readFile(std::string fileName)
 	//Ouverture du fichier
 	std::ifstream fichier(fileName, std::ios_base::binary);
 	if (!fichier.is_open())
-	{
 		std::cerr << "Probleme d'ouverture du fichier\n";
-	}
 
 	//Lecture de l'entete
 	std::string ligne;
@@ -46,9 +44,6 @@ donneesEtInfos readFile(std::string fileName)
 	//Lecture de la derniere ligne de l'entete "dans le vide"
 	std::getline(fichier, ligne);
 
-
-	
-
 	//Initialisation tableau avec valeurs en int
 	asciiTab donneesFinales;
 	donneesFinales.resize(hauteur, std::vector<int>(largeur));
@@ -67,9 +62,7 @@ donneesEtInfos readFile(std::string fileName)
 
 		//Conversion des donnees en int pour qu'elles soient exploitables
 		for (size_t j = 0; j < donneesUnsigned.size(); j++)
-		{
 			donneesFinales[i][j] = static_cast<int>(donneesUnsigned[j]);
-		}
 	}
 	
 	fichier.close();
@@ -135,18 +128,14 @@ std::vector<std::string> paletteSelect(std::string filePalette)
 	std::vector<std::string> tabCouleurs;
 
 	if (filePalette == "") //si aucune palette renseigne definir une par defaut
-	{
 		tabCouleurs = { "W", "w", "l", "i", ":", ",", ".", " " };
-	}
 
 	else //si palette renseigne par utlisateur alors analyse de celle-ci
 	{
 		std::ifstream palette(filePalette);
 
 		if (!palette.is_open())
-		{
 			std::cerr << "Probleme d'ouverture du fichier\n";
-		}
 
 		std::string ligne;
 
@@ -156,9 +145,7 @@ std::vector<std::string> paletteSelect(std::string filePalette)
 			getline 'recupere' chaque ligne dans palette et les stocks dans la variable ligne.
 			Utilisation de getline possible comme condition car retourne false lorsque le parcous de palette est fini
 			*/
-		{
 			tabCouleurs.push_back(ligne); //ajout du caractere au tableau
-		}
 		palette.close();
 	}
 
@@ -170,13 +157,9 @@ asciiTab imageReduction(donneesEtInfos donnees, unsigned int largeurUtilisateur,
 	//calcul du facteur a utiliser (en fonction de la reduction la plus importante pour conserver le ratio
 	unsigned int facteur;
 	if (largeurUtilisateur < hauteurUtilisateur)
-	{
 		facteur = donnees.second[0] / largeurUtilisateur;
-	}
 	else
-	{
 		facteur = donnees.second[1] / hauteurUtilisateur;
-	}
 
 	//Calcul de la nouvelle largeur pour resize le tableau au bon nombre de lignes
 	unsigned int nouvelleLargeur = donnees.second[0] / facteur;
@@ -195,14 +178,12 @@ asciiTab imageReduction(donneesEtInfos donnees, unsigned int largeurUtilisateur,
 			cpt = 0;
 			moyenne = 0;
 			for (size_t j = 0; j < facteur; j++) //parcours de chaque ligne du bloc
-			{
 				for (size_t l = 0; l < facteur; l++) //parcours de chaque valeurs de chaque ligne du bloc
 				{
 					//calcul de la moyenne des cases
 					moyenne += donnees.first[facteur * i + j][facteur * k + l];
 					cpt++;
 				}
-			}
 			moyenne /= cpt;
 			donneesReduite[i].push_back(moyenne);
 		}

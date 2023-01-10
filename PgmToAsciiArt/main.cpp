@@ -66,26 +66,17 @@ int main(int argc, char* argv[])
     }
 
     if (fileName == "") //si fileName pas renseigne
-    {
         fileName = askFileName();
-    }
     
     auto donnees = readFile(fileName);
 
 
     auto file = donnees.first;
     if (width < donnees.second[0] || height < donnees.second[1]) //si largeur demande par utilisateur inferieur a la largeur de l'image ou hauteur demande par utilisateur inferieur a la hauteur de l'image
-    {
         file = imageReduction(donnees, width, height);
-    }
 
     if (fileOutput == "") //si nom du fichier de sortie non renseigne par utilisateur afficher dans la console
-    {
         generateAscii(file, OutputMethod::Console, filePalette, fileOutput);
-    }
-
     else
-    {
         generateAscii(file, OutputMethod::TextFile, filePalette, fileOutput);
-    }
 }

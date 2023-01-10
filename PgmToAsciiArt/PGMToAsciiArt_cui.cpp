@@ -40,42 +40,6 @@ std::string askForPalette()
 	return palette;
 }
 
-void showAscii(asciiTab tab, std::string filePalette)
-{
-#ifdef _WIN32
-	SetConsoleOutputCP(CP_UTF8);
-	SetConsoleCP(CP_UTF8);
-#endif // _WIN32
-
-	auto tabCouleurs = paletteSelect(filePalette);
-
-	//variable contenant l'intervalle entre chaque nuance de couleurs
-	size_t pas = 256 / tabCouleurs.size();
-
-	system("cls"); //clear console
-
-	for (size_t i = 0; i < tab.size(); i++) //lecture de chaques lignes
-	{
-		for (size_t j = 0; j < tab[i].size(); j++) //lecture de chaque valeur de la ligne
-		{
-			size_t indicateurCouleur = 0;
-			size_t cpt = 0;
-			for (size_t k = 0; k < tabCouleurs.size(); k++) //parcours du tableau tabCouleurs pour voir a quel caractere appartient la valeur
-			{
-				indicateurCouleur += pas;
-				cpt++;
-
-				if (tab[i][j] <= indicateurCouleur)
-				{
-					std::cout << tabCouleurs[k];
-					break;
-				}
-			}
-		}
-		std::cout << "\n";
-	}
-}
-
 void showHelp()
 {
 #ifdef _WIN32
@@ -105,4 +69,13 @@ void showHelp()
 		<< "est bornée par la taille de l'image en entrée. La taille de l'ascii art conserve\n"
 		<< "toujours le même ratio que l'image d'entrée, les valeurs des options --width et --height\n"
 		<< "ne sont que des maximums.\n";
+}
+
+void showChar(std::string c)
+{
+#ifdef _WIN32
+	SetConsoleOutputCP(CP_UTF8);
+	SetConsoleCP(CP_UTF8);
+#endif // _WIN32
+	std::cout << c;
 }

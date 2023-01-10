@@ -81,11 +81,11 @@ int main(int argc, char* argv[])
 
     if (fileOutput == "") //si nom du fichier de sortie non renseigne par utilisateur afficher dans la console
     {
-        showAscii(file, filePalette);
+        generateAscii(file, OutputMethod::Console, filePalette, fileOutput);
     }
 
     else
     {
-        asciiToFile(file, filePalette, fileOutput);
+        generateAscii(file, OutputMethod::TextFile, filePalette, fileOutput);
     }
 }

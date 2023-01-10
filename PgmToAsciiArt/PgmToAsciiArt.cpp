@@ -4,10 +4,12 @@
 
 
 #include "PgmToAsciiArt.h"
+#include "PGMToAsciiArt_cui.h"
 #include <iostream>
 #include <fstream>
 #include <sstream>
 #include <array>
+#include <ostream>
 
 donneesEtInfos readFile(std::string fileName)
 {
@@ -80,14 +82,12 @@ donneesEtInfos readFile(std::string fileName)
 	return donneesCompletes;
 }
 
-void asciiToFile(asciiTab tab, std::string filePalette, std::string fileOutput)
+void generateAscii(asciiTab tab, OutputMethod om, std::string filePalette, std::string fileOutput)
 {
-
 	auto tabCouleurs = paletteSelect(filePalette);
 
 	//variable contenant l'intervalle entre chaque nuance de couleurs
 	size_t pas = 256 / tabCouleurs.size();
-
 
 	std::ofstream fichierOutput(fileOutput);
 
@@ -104,7 +104,15 @@ void asciiToFile(asciiTab tab, std::string filePalette, std::string fileOutput)
 
 				if (tab[i][j] <= indicateurCouleur)
 				{
-					fichierOutput << tabCouleurs[k];
+					switch (om)
+					{
+					case OutputMethod::Console:
+						showChar(tabCouleurs[k]);
+						break;
+					case OutputMethod::TextFile:
+						fichierOutput << tabCouleurs[k];
+						break;
+					}
 					break;
 				}
 			}

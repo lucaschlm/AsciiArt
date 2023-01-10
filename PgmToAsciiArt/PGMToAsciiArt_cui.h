@@ -12,8 +12,8 @@ std::string askFileOutput();
 //Fonction demandant le choix de palette
 std::string askForPalette();
 
-//Fonction affichant l'ascii art
-void showAscii(asciiTab tab, std::string filePalette);
-
 //Fonction qui affiche l'aide
 void showHelp();
+
+//Fonction affichant un caractère
+void showChar(std::string c);

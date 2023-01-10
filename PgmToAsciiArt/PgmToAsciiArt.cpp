@@ -117,7 +117,15 @@ void generateAscii(asciiTab tab, OutputMethod om, std::string filePalette, std::
 				}
 			}
 		}
-		fichierOutput << "\n";
+		switch (om)
+		{
+		case OutputMethod::Console:
+			showChar("\n");
+			break;
+		case OutputMethod::TextFile:
+			fichierOutput << "\n";
+			break;
+		}
 	}
 	fichierOutput.close();
 }

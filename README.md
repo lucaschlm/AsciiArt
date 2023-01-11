@@ -23,3 +23,16 @@ PgmToAsciiArt.exe --input [input_file] --output [output_file] --palette [palette
 
 **Remarks**:
 Regardless of the values of the `--width` and `--height` options, the size of the ASCII art is bounded by the size of the input image. The size of the ASCII art always keeps the same ratio as the input image, the values of the options `--width` and `--height` are only maximums.
+
+## Examples
+
+![UTF8_example](https://user-images.githubusercontent.com/42523430/211897188-dcb41b2a-877a-4d81-972d-5ce49dcedb23.jpg)
+
+- Convert `image.pgm` to `image.txt` using a custom palette stored in `custom_palette.txt`:
+
+![image](https://user-images.githubusercontent.com/42523430/211897875-5a9d7d94-c936-48a8-a86e-c49b15eec7bc.png)
+
+- Adding a maximum width of 100 pixels
+
+![image](https://user-images.githubusercontent.com/42523430/211898303-3e1657ef-f603-4eff-a197-6a3789e750e2.png)
+

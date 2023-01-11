@@ -20,21 +20,21 @@ int main(int argc, char* argv[])
     {
         // passage du tableau de char en string pour comparaisons
         valeur = argv[i];
-        if (valeur == "--input")
+        if (valeur == "--input" || valeur == "-i")
         {
             i++;
             valeur = argv[i];
             fileName = valeur;
             continue;
         }  
-        if (valeur == "--output")
+        if (valeur == "--output" || valeur == "-o")
         {  
             i++;
             valeur = argv[i];
             fileOutput = valeur;
             continue;
         }
-        if (valeur == "--palette")
+        if (valeur == "--palette" || valeur == "-p")
         {
             i++;
             valeur = argv[i];
@@ -42,7 +42,7 @@ int main(int argc, char* argv[])
 
             continue;
         }
-       if (valeur == "--width")
+       if (valeur == "--width" || valeur == "-w")
         {
             i++;
             valeur = argv[i];
@@ -58,7 +58,7 @@ int main(int argc, char* argv[])
 
             continue;
         }
-        if (valeur == "--help")
+        if (valeur == "--help" || valeur == "-h")
         {
             showHelp();
             return 1;

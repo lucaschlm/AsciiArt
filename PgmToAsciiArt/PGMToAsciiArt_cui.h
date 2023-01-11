@@ -15,5 +15,5 @@ std::string askForPalette();
 //Fonction qui affiche l'aide
 void showHelp();
 
-//Fonction affichant un caractère
+//Fonction affichant un caractÃ¨re
 void showChar(std::string c);

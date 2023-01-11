@@ -14,7 +14,7 @@ std::string askFileName()
 	SetConsoleCP(CP_UTF8);
 #endif // _WIN32
 
-	std::cout << "Saisissez le nom du fichier à ouvrir : ";
+	std::cout << "Saisissez le nom du fichier Ã  ouvrir : ";
 	std::string fileName;
 	std::cin >> fileName;
 
@@ -50,24 +50,24 @@ void showHelp()
 	std::cout << "Usage :\n"
 		<< "PgmToASciiArt [options]\n\n"
 		<< "Options :\n"
-		<< std::setw(widthOptions) << std::left << "--input fichier" << std::right << "Spécifie le fichier image à convertir\n"
-		<< std::setw(widthOptions) << " " << std::right << "Si ce paramètre n'est pas spécifié, le fichier est demandé via la console.\n\n"
-		<< std::setw(widthOptions) << std::left << "--output fichier" << std::right << "Spécifie le nom du fichier texte qui contiendra l'Ascii Art.\n"
-		<< std::setw(widthOptions) << " " << std::right << "Si ce paramètre n'est pas spécifié, l'Ascii Art est sortie dans la console.\n\n"
-		<< std::setw(widthOptions) << std::left << "--palette fichier" << std::right << "Spécifie un fichier texte contenant la palette de couleur Ascii\n"
-		<< std::setw(widthOptions) << " " << std::right << "Chaque ligne du fichier contient un charactère en UTF-8, du plus sombre au plus clair\n"
-		<< std::setw(widthOptions) << " " << std::right << "Si ce paramètre n'est pas spécifié, la palette par défaut est \"W\", \"w\", \"l\", \"i\", \":\", \",\", \".\", \" \"\n\n"
-		<< std::setw(widthOptions) << std::left << "--width nombre" << std::right << "Spécifie la largeur max de l'Ascii Art.\n"
-		<< std::setw(widthOptions) << " " << std::right << "Si ce paramètre n'est pas spécifié, aucune limite n'est fixée.\n"
+		<< std::setw(widthOptions) << std::left << "--input fichier" << std::right << "SpÃ©cifie le fichier image Ã  convertir\n"
+		<< std::setw(widthOptions) << " " << std::right << "Si ce paramÃ¨tre n'est pas spÃ©cifiÃ©, le fichier est demandÃ© via la console.\n\n"
+		<< std::setw(widthOptions) << std::left << "--output fichier" << std::right << "SpÃ©cifie le nom du fichier texte qui contiendra l'Ascii Art.\n"
+		<< std::setw(widthOptions) << " " << std::right << "Si ce paramÃ¨tre n'est pas spÃ©cifiÃ©, l'Ascii Art est sortie dans la console.\n\n"
+		<< std::setw(widthOptions) << std::left << "--palette fichier" << std::right << "SpÃ©cifie un fichier texte contenant la palette de couleur Ascii\n"
+		<< std::setw(widthOptions) << " " << std::right << "Chaque ligne du fichier contient un charactÃ¨re en UTF-8, du plus sombre au plus clair\n"
+		<< std::setw(widthOptions) << " " << std::right << "Si ce paramÃ¨tre n'est pas spÃ©cifiÃ©, la palette par dÃ©faut est \"W\", \"w\", \"l\", \"i\", \":\", \",\", \".\", \" \"\n\n"
+		<< std::setw(widthOptions) << std::left << "--width nombre" << std::right << "SpÃ©cifie la largeur max de l'Ascii Art.\n"
+		<< std::setw(widthOptions) << " " << std::right << "Si ce paramÃ¨tre n'est pas spÃ©cifiÃ©, aucune limite n'est fixÃ©e.\n"
 		<< std::setw(widthOptions) << " " << std::right << "Voir Remarques.\n\n"
-		<< std::setw(widthOptions) << std::left << "--height nombre" << std::right << "Spécifie la hauteur max de l'Ascii Art.\n"
-		<< std::setw(widthOptions) << " " << std::right << "Si ce paramètre n'est pas spécifié, aucune limite n'est fixée.\n"
+		<< std::setw(widthOptions) << std::left << "--height nombre" << std::right << "SpÃ©cifie la hauteur max de l'Ascii Art.\n"
+		<< std::setw(widthOptions) << " " << std::right << "Si ce paramÃ¨tre n'est pas spÃ©cifiÃ©, aucune limite n'est fixÃ©e.\n"
 		<< std::setw(widthOptions) << " " << std::right << "Voir Remarques.\n\n"
 		<< std::setw(widthOptions) << std::left << "--help" << std::right << "Affiche cette aide\n\n"
 		<< "Remarques :\n"
 		<< "Quelles que soient les valeurs des options --width et --height, la taille de l'Ascii Art\n"
-		<< "est bornée par la taille de l'image en entrée. La taille de l'ascii art conserve\n"
-		<< "toujours le même ratio que l'image d'entrée, les valeurs des options --width et --height\n"
+		<< "est bornÃ©e par la taille de l'image en entrÃ©e. La taille de l'ascii art conserve\n"
+		<< "toujours le mÃªme ratio que l'image d'entrÃ©e, les valeurs des options --width et --height\n"
 		<< "ne sont que des maximums.\n";
 }
 

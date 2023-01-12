@@ -32,7 +32,7 @@ Regardless of the values of the `--width` and `--height` options, the size of th
 
 ![image](https://user-images.githubusercontent.com/42523430/211897875-5a9d7d94-c936-48a8-a86e-c49b15eec7bc.png)
 
-- Adding a maximum width of 100 pixels
+- Adding a maximum width of 100 characters
 
 ![image](https://user-images.githubusercontent.com/42523430/211898303-3e1657ef-f603-4eff-a197-6a3789e750e2.png)
 
